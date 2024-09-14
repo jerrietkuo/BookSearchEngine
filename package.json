@@ -17,8 +17,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@apollo/client": "^3.11.8",
     "@craco/craco": "^7.1.0",
+    "apollo-boost": "^0.4.9",
     "bootstrap": "^5.3.3",
+    "graphql": "^15.9.0",
     "if-env": "^1.0.4",
     "postcss": "^8.4.47",
     "postcss-flexbugs-fixes": "^4.2.1",
