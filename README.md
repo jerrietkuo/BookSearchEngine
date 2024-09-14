@@ -1,152 +1,114 @@
-## 21 MERN: Book Search Engine
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Book Search Engine - MERN Stack
 
 ## Description
 
-This project is to take the starter code with a fully functioning Google Books API search engine built with a RESTful API, and refactor it to be a GraphQL API built with Apollo Server. The application was built using the MERN stack with a React front end, MongoDB database, Node.js, Express.js and API and was already set up to allow the users to save book searches to the back end.
+This is a full-stack MERN application that allows users to search for books using the Google Books API. Users can create an account, log in, and save books to their personal reading list. This project utilizes a GraphQL API powered by Apollo Server, replacing the traditional RESTful API architecture. The application is built with a React front end, MongoDB database, Node.js/Express.js server, and handles user authentication.
 
-This project assisgnment is to :-
+## Features
 
-- Set up an Apollo Server to use GraphQL queries and muations to fetch and modify data, replacing the existing RESTful API.
-- Modify the existing authenication middleware so that it works in the context of a GraphQL API.
-- Create an Apollo Provider so that requests can communicate with an Apollo Server.
-- Deploy the application to Heroku with a MongoDB database using MongoDB Atlas.
-
-The URL of the GitHub repository is https://github.com/stellalph/21-MERN-Book-Search-Engine.git and the repository name is 21-MERN-Book-Search-Engine.
+- Search for books using the Google Books API.
+- User authentication (Signup, Login, Logout).
+- Save books to a personal reading list.
+- Remove books from the saved list.
+- Fully functional GraphQL API with queries and mutations for book management.
+- Responsive and polished user interface.
 
 ## Table of Contents
 
-- [Technologies Used](#technologies-used)
-- [Deployment](#deployment)
+- [Installation](#installation)
 - [Usage](#usage)
-- [References](#references)
+- [Technologies Used](#technologies-used)
 - [License](#license)
+- [Screenshots](#screenshots)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
 
-## Technologies Used
+## Installation
 
-- This application is a MERN stack application which is a group of four technologies, that is:-
-  - MongoDB
-  - Express.js
-  - ReactJS
-  - Node.js
-- The MERN stack has a three-layer architecture based on Model-View-Controller pattern and each interconnected layer performs a specific function in the application:-
+To run this project locally:
 
-  | Client (View)          | React JS                   | User inputs data and Data display                        |
-  | ---------------------- | -------------------------- | -------------------------------------------------------- |
-  | **Server(Controller)** | **Express.js and Node.js** | **Method called to store and retrieve data in database** |
-  | **Database(Model)**    | **MongoDB**                | **Stores raw data and contains no logic**                |
+1. Clone the repository.
+   ```bash
+   git clone https://github.com/jerrietkuo/BookSearchEngine.git
+   ```
+2. Navigate to the project directory.
+   ```bash
+   cd BookSearchEngine
+   ```
+3. Install the dependencies.
+   ```bash
+   npm install
+   ```
+4. Set up environment variables. Create a `.env` file in the root of your project with the following:
 
-- As this application has come already with mostly pre-installed npm packages and is fully functioning Google Books API search engine built with a RESTful API and to refactor it to be a Graph API built with Apollo Server, the following additional npm packages were installed:-
+   ```
+   MONGODB_URI=<your-mongo-uri>
+   JWT_SECRET=<your-jwt-secret>
+   ```
 
-        - npm i apollo-server-express
-        - npm i graphql
-        - npm i @apollo/client
-        - npm i @apollo/react-hooks
-
-* Before deploying to Heroku, the application is run in develop mode and tested using by entering at command prompt:-
-
-  - npm install (ensure all that dependencies are installed)
-  - npm init
-  - npm run develop ( cd to the correct directory)
-
-    ![alt text](./assets/img06.png)
-
-## Deployment
-
-- The application has been deployed to Heroku with a MongoDB database using MongoDB Atlas.
-
-- See the below the example of MongoDB database using MongoDB Atlas:-
-
-  ![alt text](./assets/img05.png)
-
-- The URL of the functional deployed application is https://protected-brushlands-99995.herokuapp.com/
+5. Start the server.
+   ```bash
+   npm run develop
+   ```
 
 ## Usage
 
-Below are the screenshots of the walkthrough steps the user (the avid reader) who want to search for new books to so that the user can keep a list of books to purchase.
+After completing the installation steps:
 
-- As the user of the application :-
+- Open the browser and navigate to `http://localhost:3000`.
+- Sign up for a new account or log in if you already have one.
+- Use the search bar to find books using the Google Books API.
+- Save books to your personal list by clicking on "Save This Book!".
+- View or remove books from your saved list under "My Books".
 
-```
+## Technologies Used
 
-GIVEN a book search engine
-WHEN I load the search engine
-THEN I am presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button
-WHEN I click on the Search for Books menu option
-THEN I am presented with an input field to search for books and a submit button
-WHEN I am not logged in and enter a search term in the input field and click the submit button
-THEN I am presented with several search results, each featuring a book’s title, author, description, image, and a link to that book on the Google Books site
-```
-
-- ![alt text](./assets/img01.png)
-
-```
-WHEN I click on the Login/Signup menu option
-THEN a modal appears on the screen with a toggle between the option to log in or sign up
-WHEN the toggle is set to Signup
-THEN I am presented with three inputs for a username, an email address, and a password, and a signup button
-
-```
-
-- ![alt text](./assets/img07.png)
-
-```
-WHEN the toggle is set to Login
-THEN I am presented with two inputs for an email address and a password and login button
-
-```
-
-- ![alt text](./assets/img04.png)
-
-```
-WHEN I enter a valid email address and create a password and click on the signup button
-THEN my user account is created and I am logged in to the site
-WHEN I enter my account’s email address and password and click on the login button
-THEN I the modal closes and I am logged in to the site
-WHEN I am logged in to the site
-THEN the menu options change to Search for Books, an option to see my saved books, and Logout
-```
-
-- ![alt text](./assets/img02.png)
-
-```
-WHEN I am logged in and enter a search term in the input field and click the submit button
-THEN I am presented with several search results, each featuring a book’s title, author, description, image, and a link to that book on the Google Books site and a button to save a book to my account
-```
-
-- ![alt text](./assets/img09.png)
-
-```
-WHEN I click on the Save button on a book
-THEN that book’s information is saved to my account
-WHEN I click on the option to see my saved books
-THEN I am presented with all of the books I have saved to my account, each featuring the book’s title, author, description, image, and a link to that book on the Google Books site and a button to remove a book from my account
-```
-
-- ![alt text](./assets/img10.png)
-
-```
-WHEN I click on the Remove button on a book
-THEN that book is deleted from my saved books list
-```
-
-- ![alt text](./assets/img11.png)
-
-```
-WHEN I click on the Logout button
-THEN I am logged out of the site and presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button
-```
-
-- ![alt text](./assets/img00.png)
-
-## References
-
-- Request Response - The Full Stack Blog - Set up MongoDB Atlas dated May 10, 2022
-- Request Response - The Full Stack Blog - Deploy with Heroku and MongoDB Atlas dated July 01, 2022
-- Request Response - The Full Stack Blog - Using the GraphQL Playground in a MERN application dated May 19, 2022
-- Student Mini Project Unit 21-28
+- **MongoDB**: NoSQL database for storing user and book data.
+- **Express.js**: Back-end framework for Node.js.
+- **React.js**: Front-end library for building user interfaces.
+- **Node.js**: JavaScript runtime for the back end.
+- **GraphQL**: Query language for the API.
+- **Apollo Server**: Server to handle GraphQL queries and mutations.
+- **JWT**: JSON Web Token for secure authentication.
 
 ## License
 
-This project is licensed under the terms of the MIT license
+This project is licensed under the MIT License.
+
+## Screenshots
+
+Here are some visuals of the application in action:
+
+- **Home Page**: User can search for books and view results.
+  ![Home Page](./Assets/img01.png)
+  
+- **Saved Books**: Displays all books saved by the user.
+  ![Saved Books](./Assets/img02.png)
+
+## Deployment
+
+You can access the live version of the application [here](https://your-app-url.com).
+
+To deploy the application yourself, follow the steps provided in the [Deploy with Render and MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-render-and-mongodb-atlas) guide.
+
+## Contributing
+
+Contributions are welcome! Please fork this repository and submit a pull request with your changes. Ensure your code follows the best practices and is properly documented.
+
+1. Fork the project.
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a pull request.
+
+## Contact
+
+If you have any questions or feedback, feel free to reach out:
+
+- **Email**: [Jerriet Kuo](mailto:jerrietkuo@gmail.com)
+- **GitHub**: [Github: Jerriet](https://github.com/jerrietkuo)
+
+---
+
+© 2024 Book Search Engine. All Rights Reserved.
