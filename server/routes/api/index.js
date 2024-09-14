@@ -1,6 +1,8 @@
-const router = require('express').Router();
-const userRoutes = require('./user-routes');
+// hard-coded as the code refactored to be GraphQL API built with Apollo Server
 
-router.use('/users', userRoutes);
+// const router = require('express').Router();
+// const userRoutes = require('./user-routes');
 
-module.exports = router;
+// router.use('/users', userRoutes);
+
+// module.exports = router;
