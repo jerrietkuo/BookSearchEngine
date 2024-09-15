@@ -20,10 +20,10 @@
   "dependencies": {
     "@apollo/client": "^3.11.8",
     "apollo-server-express": "^3.13.0",
-    "graphql": "^16.9.0",
-    "bcryptjs": "^2.4.3"
+    "bcryptjs": "^2.4.3",
+    "graphql": "^16.9.0"
   },
   "engines": {
-  "node": ">=14.0.0"
-}
+    "node": ">=14.0.0"
+  }
 }
