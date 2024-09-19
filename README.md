@@ -88,9 +88,7 @@ Here are some visuals of the application in action:
 
 ## Deployment
 
-You can access the live version of the application [here](https://your-app-url.com).
-
-To deploy the application yourself, follow the steps provided in the [Deploy with Render and MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-render-and-mongodb-atlas) guide.
+You can access the live version of the application [here](https://booksearchengine-t020.onrender.com/).
 
 ## Contributing
 
