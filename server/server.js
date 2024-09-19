@@ -16,9 +16,6 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
  context: authMiddleware,
-//  These two lines below enable the playground when deployed to Heroku.
-  introspection: true,
-  playground: true, 
 });
 
 
@@ -27,12 +24,12 @@ app.use(express.json());
 
 // if we're in production, serve client/build as static assets
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
+  app.use(express.static(path.join(__dirname, '../client/dist')));
 }
 
 // app.use(routes);
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 })
 
 
